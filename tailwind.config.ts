@@ -13,6 +13,12 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'barlow': ['Barlow Semi Condensed', 'sans-serif'],
+        'script': ['Pacifico', 'cursive'],
+        'display': ['Poppins', 'sans-serif'],
+        'serif': ['Playfair Display', 'serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,15 +53,32 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        ocean: {
+          light: "hsl(var(--ocean-light))",
+          medium: "hsl(var(--ocean-medium))",
+          dark: "hsl(var(--ocean-dark))",
+          deep: "hsl(var(--ocean-deep))",
+        },
+        teal: {
+          dark: "hsl(var(--teal-dark))",
+          medium: "hsl(var(--teal-medium))",
+        },
+        sand: {
+          light: "hsl(var(--sand-light))",
+          medium: "hsl(var(--sand-medium))",
+        },
+        sun: {
+          bright: "hsl(var(--sun-bright))",
+        },
+        coral: {
+          DEFAULT: "hsl(var(--coral))",
+          light: "hsl(var(--coral-light))",
+        },
+        pink: {
+          accent: "hsl(var(--pink-accent))",
+        },
+        brown: {
+          dark: "hsl(var(--brown-dark))",
         },
       },
       borderRadius: {
