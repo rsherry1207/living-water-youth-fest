@@ -37,10 +37,6 @@ const Hero = () => {
             <p className="font-serif text-xl md:text-2xl text-white font-medium drop-shadow-lg">
               A Mar Thoma Church Regional Conference
             </p>
-            <p className="font-display text-lg md:text-xl text-sand-light drop-shadow-md">
-              Hosted by St. Mark's Mar Thoma Church &
-              <br className="md:hidden" /> Mar Thoma Church of South Florida
-            </p>
           </div>
 
           {/* CTA Buttons */}
