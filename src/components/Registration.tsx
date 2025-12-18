@@ -3,7 +3,7 @@ import { Calendar, Clock, DollarSign, Users } from "lucide-react";
 
 const Registration = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-ocean-medium to-ocean-dark text-white">
+    <section id="registration" className="py-20 px-4 bg-gradient-to-b from-ocean-medium to-ocean-dark text-white">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="font-barlow font-bold text-5xl md:text-6xl mb-4">

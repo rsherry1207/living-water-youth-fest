@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Churches = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-background to-ocean-light/30">
+    <section id="speakers" className="py-20 px-4 bg-gradient-to-b from-background to-ocean-light/30">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="font-barlow font-bold text-5xl md:text-6xl text-primary mb-4">

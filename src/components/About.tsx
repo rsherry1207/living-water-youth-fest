@@ -2,7 +2,7 @@ import { Waves, Users, Heart } from "lucide-react";
 
 const About = () => {
   return (
-    <section className="py-20 px-4 bg-background">
+    <section id="about" className="py-20 px-4 bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="font-barlow font-bold text-5xl md:text-6xl text-primary mb-4">
