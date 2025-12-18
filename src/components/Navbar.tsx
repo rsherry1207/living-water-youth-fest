@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Home } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const navItems = [
-  { label: "Home", href: "/" },
   { label: "Schedule", href: "/schedule" },
   { label: "Register & Help", href: "/register" },
   {
@@ -30,8 +29,17 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-ocean-dark/95 backdrop-blur-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-end h-12">
-          {/* Desktop Navigation */}
+        <div className="flex items-center justify-between h-12">
+          {/* Home Icon - Left */}
+          <Link
+            to="/"
+            className="text-sand-light hover:text-white transition-colors"
+            aria-label="Home"
+          >
+            <Home size={20} />
+          </Link>
+
+          {/* Desktop Navigation - Right */}
           <ul className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <li key={item.label}>
