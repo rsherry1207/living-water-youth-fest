@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const navItems = [
+  { label: "Home", href: "/" },
   { label: "Schedule", href: "/schedule" },
   { label: "Register & Help", href: "/register" },
   {
