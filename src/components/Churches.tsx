@@ -30,7 +30,7 @@ const Churches = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">
-                  Location information coming soon
+                  11029 Davis Rd, Tampa, FL 33637
                 </p>
               </div>
               <div className="flex items-start gap-3">
@@ -51,7 +51,7 @@ const Churches = () => {
               variant="outline" 
               className="w-full border-2 border-ocean-medium hover:bg-ocean-medium hover:text-white font-display font-semibold transition-all"
             >
-              Visit Church Website
+              Learn more
             </Button>
           </div>
 
@@ -92,19 +92,12 @@ const Churches = () => {
               variant="outline" 
               className="w-full border-2 border-secondary hover:bg-secondary hover:text-ocean-deep font-display font-semibold transition-all"
             >
-              Visit Church Website
+              Learn more
             </Button>
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-ocean-medium to-accent rounded-3xl p-8 md:p-12 text-center text-white">
-          <p className="font-script text-3xl md:text-4xl mb-4">
-            Stronger Together
-          </p>
-          <p className="font-display text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-            When churches unite in purpose and passion, incredible things happen. We're excited to bring our communities together for this special conference that will inspire and encourage the next generation of believers.
-          </p>
-        </div>
+
       </div>
     </section>
   );
