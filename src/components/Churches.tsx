@@ -9,9 +9,7 @@ const Churches = () => {
           <h2 className="font-barlow font-bold text-5xl md:text-6xl text-primary mb-4">
             Hosted By
           </h2>
-          <p className="font-display text-xl text-muted-foreground max-w-2xl mx-auto">
-            Two churches united in faith, bringing together youth from across the region
-          </p>
+
           <div className="w-24 h-1 bg-gradient-to-r from-secondary via-coral to-accent mx-auto rounded-full mt-6" />
         </div>
 
