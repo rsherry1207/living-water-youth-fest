@@ -14,7 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      registrations: {
+        Row: {
+          church: string
+          created_at: string
+          date_of_birth: string
+          email: string
+          first_name: string
+          id: string
+          last_name: string
+          parent_email: string | null
+          parent_name: string | null
+          parent_phone: string | null
+          phone_number: string
+        }
+        Insert: {
+          church: string
+          created_at?: string
+          date_of_birth: string
+          email: string
+          first_name: string
+          id?: string
+          last_name: string
+          parent_email?: string | null
+          parent_name?: string | null
+          parent_phone?: string | null
+          phone_number: string
+        }
+        Update: {
+          church?: string
+          created_at?: string
+          date_of_birth?: string
+          email?: string
+          first_name?: string
+          id?: string
+          last_name?: string
+          parent_email?: string | null
+          parent_name?: string | null
+          parent_phone?: string | null
+          phone_number?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
