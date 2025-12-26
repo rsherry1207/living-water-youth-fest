@@ -128,14 +128,16 @@ const RegisterPage = () => {
     setIsSubmitting(true);
 
     try {
-      // Check for duplicate email
-      const { data: existing } = await supabase
-        .from("registrations")
-        .select("email")
-        .eq("email", data.email.toLowerCase())
-        .maybeSingle();
+      // Check for duplicate email using secure function
+      const { data: emailExists, error: checkError } = await supabase
+        .rpc("check_email_exists", { check_email: data.email.toLowerCase() });
 
-      if (existing) {
+      if (checkError) {
+        console.error("Email check error:", checkError);
+        throw checkError;
+      }
+
+      if (emailExists) {
         toast({
           title: "Already Registered",
           description: "This email has already been used for registration.",
@@ -190,6 +192,27 @@ const RegisterPage = () => {
       } catch (emailError) {
         console.error("Email sending failed:", emailError);
         // Don't fail registration if email fails
+      }
+
+      // Sync to Google Sheets
+      try {
+        await supabase.functions.invoke("sync-to-google-sheets", {
+          body: {
+            firstName: data.firstName.trim(),
+            lastName: data.lastName.trim(),
+            dateOfBirth: formattedDob,
+            phoneNumber: data.phone.trim(),
+            email: data.email.toLowerCase().trim(),
+            church: data.church,
+            parentName: isUnder18 ? data.parentName?.trim() : undefined,
+            parentPhone: isUnder18 ? data.parentPhone?.trim() : undefined,
+            parentEmail: isUnder18 ? data.parentEmail?.toLowerCase().trim() : undefined,
+          },
+        });
+        console.log("Successfully synced to Google Sheets");
+      } catch (sheetError) {
+        console.error("Google Sheets sync failed:", sheetError);
+        // Don't fail registration if sync fails
       }
 
       setIsSuccess(true);
