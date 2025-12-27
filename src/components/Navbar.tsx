@@ -14,7 +14,7 @@ const navItems = [
     label: "Registration & Help",
     submenu: [
       { label: "Info & Help", href: "/register/info" },
-      { label: "Register", href: "/register" },
+      { label: "Register", href: "/register-google" },
     ],
   },
   {
