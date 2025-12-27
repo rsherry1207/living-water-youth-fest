@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import SchedulePage from "./pages/SchedulePage";
 import RegisterPage from "./pages/RegisterPage";
 import RegisterInfoPage from "./pages/RegisterInfoPage";
+import RegisterGooglePage from "./pages/RegisterGooglePage";
 import SpeakersPage from "./pages/SpeakersPage";
 import AboutConferencePage from "./pages/AboutConferencePage";
 import AboutChurchesPage from "./pages/AboutChurchesPage";
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/schedule" element={<SchedulePage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/register/info" element={<RegisterInfoPage />} />
+          <Route path="/register-google" element={<RegisterGooglePage />} />
           <Route path="/speakers" element={<SpeakersPage />} />
           <Route path="/about/conference" element={<AboutConferencePage />} />
           <Route path="/about/churches" element={<AboutChurchesPage />} />
