@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-living-water.jpg";
 
 const Hero = () => {
@@ -41,19 +42,23 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-            <Button 
-              size="lg" 
-              className="bg-secondary hover:bg-secondary/90 text-ocean-deep font-display font-bold text-lg px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all hover:scale-105"
-            >
-              Register Now
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-2 border-white font-display font-semibold text-lg px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all hover:scale-105"
-            >
-              Learn More
-            </Button>
+            <Link to="/register-google">
+              <Button 
+                size="lg" 
+                className="bg-secondary hover:bg-secondary/90 text-ocean-deep font-display font-bold text-lg px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+              >
+                Register Now
+              </Button>
+            </Link>
+            <Link to="/register/info">
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-2 border-white font-display font-semibold text-lg px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+              >
+                Learn More
+              </Button>
+            </Link>
           </div>
 
           {/* Scroll Indicator */}
