@@ -77,7 +77,7 @@ const AboutConferencePage = () => {
               <p className="text-sand-light mb-4">
                 This year, SRYFC will be hosted at the Christian Retreat Center in Bradenton, FL.
               </p>
-              <p className="text-sand/90 font-medium">
+              <p className="flex items-start gap-2 text-sand-light">
                 1200 Glory Way Blvd, Bradenton, FL 34212
               </p>
             </div>
@@ -99,7 +99,7 @@ const AboutConferencePage = () => {
               </p>
               <ul className="grid grid-cols-2 gap-2">
                 {parishes.map((parish, index) => (
-                  <li key={index} className="flex items-center gap-2 text-sand/90">
+                  <li key={index} className="flex items-start gap-2 text-sand-light">
                     <span className="text-secondary">•</span>
                     <span>{parish}</span>
                   </li>
@@ -118,15 +118,15 @@ const AboutConferencePage = () => {
               <div className="w-16 h-1 bg-secondary mb-6" />
               <p className="text-sand-light mb-4">Regionals is:</p>
               <ul className="space-y-3">
-                <li className="flex items-start gap-2 text-sand/90">
+                <li className="flex items-start gap-2 text-sand-light">
                   <span className="text-secondary mt-1">•</span>
                   <span>A really good opportunity for our youths to interact with like-minded people across our region</span>
                 </li>
-                <li className="flex items-start gap-2 text-sand/90">
+                <li className="flex items-start gap-2 text-sand-light">
                   <span className="text-secondary mt-1">•</span>
                   <span>Spend time in fellowship, as well as be immersed in an all-inclusive weekend</span>
                 </li>
-                <li className="flex items-start gap-2 text-sand/90">
+                <li className="flex items-start gap-2 text-sand-light">
                   <span className="text-secondary mt-1">•</span>
                   <span>Centered around growing and strengthening our relationship with Christ, both as individuals and as a youth fellowship</span>
                 </li>
