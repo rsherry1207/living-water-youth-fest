@@ -107,6 +107,32 @@ const AboutConferencePage = () => {
               </ul>
             </div>
 
+            {/* Why should I attend? */}
+            <div className="bg-ocean-deep/80 backdrop-blur-sm rounded-2xl p-8 border border-teal/20">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 bg-secondary/20 rounded-lg">
+                  <Users className="w-6 h-6 text-secondary" />
+                </div>
+                <h2 className="font-script text-2xl text-secondary">Why should I attend?</h2>
+              </div>
+              <div className="w-16 h-1 bg-secondary mb-6" />
+              <p className="text-sand-light mb-4">Regionals is:</p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2 text-sand/90">
+                  <span className="text-secondary mt-1">•</span>
+                  <span>A really good opportunity for our youths to interact with like-minded people across our region</span>
+                </li>
+                <li className="flex items-start gap-2 text-sand/90">
+                  <span className="text-secondary mt-1">•</span>
+                  <span>Spend time in fellowship, as well as be immersed in an all-inclusive weekend</span>
+                </li>
+                <li className="flex items-start gap-2 text-sand/90">
+                  <span className="text-secondary mt-1">•</span>
+                  <span>Centered around growing and strengthening our relationship with Christ, both as individuals and as a youth fellowship</span>
+                </li>
+              </ul>
+            </div>
+
             {/* Contact */}
             <div className="bg-ocean-deep/80 backdrop-blur-sm rounded-2xl p-8 border border-teal/20">
               <div className="flex items-center gap-3 mb-6">
