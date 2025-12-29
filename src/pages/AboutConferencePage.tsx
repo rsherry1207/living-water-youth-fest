@@ -155,14 +155,14 @@ const AboutConferencePage = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sand/90 hover:text-secondary transition-colors"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <Instagram className="flex items-start gap-2 text-sand-light" />
                   <span>@sryfconference</span>
                 </a>
                 <a 
                   href="mailto:sryfconference@gmail.com"
                   className="flex items-center gap-3 text-sand/90 hover:text-secondary transition-colors"
                 >
-                  <Mail className="w-5 h-5" />
+                  <Mail className="flex items-start gap-2 text-sand-light" />
                   <span>sryfconference@gmail.com</span>
                 </a>
               </div>
