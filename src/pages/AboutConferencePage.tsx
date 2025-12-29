@@ -57,7 +57,7 @@ const AboutConferencePage = () => {
               </p>
               <ul className="space-y-2">
                 {conferenceIncludes.map((item, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sand/90">
+                  <li key={index} className="flex items-start gap-2 text-sand-light">
                     <span className="text-secondary mt-1">•</span>
                     <span>{item}</span>
                   </li>
