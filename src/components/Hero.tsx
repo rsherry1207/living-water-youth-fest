@@ -50,15 +50,6 @@ const Hero = () => {
                 Register Now
               </Button>
             </Link>
-            <Link to="/register/info">
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-2 border-white font-display font-semibold text-lg px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all hover:scale-105"
-              >
-                Learn More
-              </Button>
-            </Link>
           </div>
 
           {/* Scroll Indicator */}
