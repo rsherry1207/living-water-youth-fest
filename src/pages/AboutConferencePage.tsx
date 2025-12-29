@@ -133,19 +133,22 @@ const AboutConferencePage = () => {
               </ul>
             </div>
 
-            {/* Contact */}
-            <div className="bg-ocean-deep/80 backdrop-blur-sm rounded-2xl p-8 border border-teal/20">
-              <div className="flex items-center gap-3 mb-6">
+          </div>
+
+          {/* Contact - Centered at bottom */}
+          <div className="max-w-md mx-auto mt-8">
+            <div className="bg-ocean-deep/80 backdrop-blur-sm rounded-2xl p-8 border border-teal/20 text-center">
+              <div className="flex items-center justify-center gap-3 mb-6">
                 <div className="p-2 bg-secondary/20 rounded-lg">
                   <Mail className="w-6 h-6 text-secondary" />
                 </div>
                 <h2 className="font-script text-2xl text-secondary">Have Questions?</h2>
               </div>
-              <div className="w-16 h-1 bg-secondary mb-6" />
+              <div className="w-16 h-1 bg-secondary mb-6 mx-auto" />
               <p className="text-sand-light mb-6">
                 If you have any other questions, please feel free to reach out to us!
               </p>
-              <div className="space-y-4">
+              <div className="space-y-4 flex flex-col items-center">
                 <a 
                   href="https://instagram.com/sryfconference" 
                   target="_blank" 
@@ -164,7 +167,6 @@ const AboutConferencePage = () => {
                 </a>
               </div>
             </div>
-
           </div>
         </div>
       </main>
