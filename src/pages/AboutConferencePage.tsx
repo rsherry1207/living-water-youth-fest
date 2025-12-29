@@ -153,16 +153,16 @@ const AboutConferencePage = () => {
                   href="https://instagram.com/sryfconference" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sand/90 hover:text-secondary transition-colors"
+                  className="flex items-center gap-3 text-sand-light hover:text-secondary transition-colors"
                 >
-                  <Instagram className="flex items-start gap-2 text-sand-light" />
+                  <Instagram className="w-5 h-5" />
                   <span>@sryfconference</span>
                 </a>
                 <a 
                   href="mailto:sryfconference@gmail.com"
-                  className="flex items-center gap-3 text-sand/90 hover:text-secondary transition-colors"
+                  className="flex items-center gap-3 text-sand-light hover:text-secondary transition-colors"
                 >
-                  <Mail className="flex items-start gap-2 text-sand-light" />
+                  <Mail className="w-5 h-5" />
                   <span>sryfconference@gmail.com</span>
                 </a>
               </div>
