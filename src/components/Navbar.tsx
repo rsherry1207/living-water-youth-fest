@@ -74,7 +74,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     to={item.href}
-                    className="text-sand-light hover:text-white transition-colors font-display text-xs tracking-wide"
+                    className="flex items-center text-sand-light hover:text-white transition-colors font-display text-xs tracking-wide"
                   >
                     {item.label}
                   </Link>
