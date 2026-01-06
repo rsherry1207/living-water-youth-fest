@@ -23,7 +23,8 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Loader2, CheckCircle } from "lucide-react";
+import { Loader2, CheckCircle, ExternalLink, Check } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const churches = [
   "Mar Thoma Church of South Florida",
@@ -61,10 +62,13 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
+const ZEFFY_PAYMENT_URL = "https://www.zeffy.com/en-US/ticketing/southern-regional-youth-fellowship-conference--2026";
+
 const RegisterPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isUnder18, setIsUnder18] = useState(false);
+  const [hasPaid, setHasPaid] = useState(false);
   const { toast } = useToast();
 
   const form = useForm<FormData>({
@@ -502,18 +506,58 @@ const RegisterPage = () => {
                     </div>
                   )}
 
+                  {/* Payment Section */}
+                  <div className="border-t border-ocean-light pt-6 mt-6">
+                    <h3 className="font-display font-bold text-lg text-ocean-dark mb-4">
+                      Payment
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4">
+                      Registration requires payment. Click the button below to complete your payment on Zeffy, then confirm below.
+                    </p>
+                    
+                    <a
+                      href={ZEFFY_PAYMENT_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center w-full bg-ocean-medium hover:bg-ocean-dark text-white font-display font-bold text-lg py-4 rounded-full shadow-lg hover:shadow-xl transition-all mb-4"
+                    >
+                      <ExternalLink className="mr-2 h-5 w-5" />
+                      Pay via Zeffy
+                    </a>
+                    
+                    <div className="flex items-start space-x-3 bg-sand-light/50 p-4 rounded-xl">
+                      <Checkbox
+                        id="payment-confirmation"
+                        checked={hasPaid}
+                        onCheckedChange={(checked) => setHasPaid(checked === true)}
+                        className="mt-1 border-ocean-medium data-[state=checked]:bg-ocean-medium"
+                      />
+                      <label
+                        htmlFor="payment-confirmation"
+                        className="text-sm text-ocean-dark cursor-pointer leading-relaxed"
+                      >
+                        I confirm that I have completed my payment on Zeffy. I understand that my registration will only be valid with confirmed payment.
+                      </label>
+                    </div>
+                  </div>
+
                   <Button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-secondary to-coral hover:from-coral hover:to-secondary text-white font-display font-bold text-lg py-6 rounded-full shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+                    disabled={isSubmitting || !hasPaid}
+                    className="w-full bg-gradient-to-r from-secondary to-coral hover:from-coral hover:to-secondary text-white font-display font-bold text-lg py-6 rounded-full shadow-xl hover:shadow-2xl transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
                     {isSubmitting ? (
                       <>
                         <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                         Registering...
                       </>
+                    ) : !hasPaid ? (
+                      "Complete Payment to Register"
                     ) : (
-                      "Complete Registration"
+                      <>
+                        <Check className="mr-2 h-5 w-5" />
+                        Complete Registration
+                      </>
                     )}
                   </Button>
                 </form>
