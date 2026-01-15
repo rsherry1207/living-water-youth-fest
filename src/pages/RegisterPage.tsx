@@ -1,9 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, FileText, CreditCard } from "lucide-react";
 
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe3HN5E24ez55v23IbtrOB-qmmCipeJ6DcjRterDbYBO8V-kw/viewform?embedded=true";
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe3HN5E24ez55v23IbtrOB-qmmCipeJ6DcjRterDbYBO8V-kw/viewform";
 const ZEFFY_PAYMENT_URL = "https://www.zeffy.com/en-US/ticketing/southern-regional-youth-fellowship-conference--2026";
 
 const RegisterPage = () => {
@@ -18,32 +18,56 @@ const RegisterPage = () => {
               Register for SRYFC 2026
             </h1>
             <p className="text-sand/80 text-center mt-4 max-w-2xl mx-auto">
-              Fill out the form below to secure your spot at the conference
+              Complete the two steps below to secure your spot at the conference
             </p>
             <div className="w-24 h-1 bg-gradient-to-r from-secondary via-coral to-white mx-auto rounded-full mt-6" />
           </div>
 
-          {/* Google Form Embed */}
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-3xl overflow-hidden shadow-xl">
-              <iframe
-                src={GOOGLE_FORM_URL}
-                width="100%"
-                height="800"
-                frameBorder="0"
-                marginHeight={0}
-                marginWidth={0}
-                title="SRYFC 2026 Registration Form"
-                className="w-full min-h-[600px] md:min-h-[800px]"
+          {/* Registration Steps */}
+          <div className="max-w-2xl mx-auto">
+            {/* Step 1: Google Form */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center mb-6">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-secondary rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">1</span>
+                </div>
+                <h2 className="text-xl md:text-2xl font-display font-bold text-sand-light">
+                  Complete Registration Form
+                </h2>
+              </div>
+              <p className="text-sand-light text-lg mb-6">
+                Register for the conference by completing the Google Form using the button below.
+              </p>
+              <Button
+                asChild
+                size="lg"
+                className="bg-secondary hover:bg-secondary/90 text-white font-display text-lg px-8 py-6"
               >
-                Loading…
-              </iframe>
+                <a
+                  href={GOOGLE_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2"
+                >
+                  <FileText className="w-5 h-5" />
+                  Open Registration Form
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </Button>
             </div>
 
-            {/* Payment Section */}
-            <div className="mt-8 bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center">
+            {/* Step 2: Payment */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 text-center">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-coral rounded-full flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">2</span>
+                </div>
+                <h2 className="text-xl md:text-2xl font-display font-bold text-sand-light">
+                  Complete Payment
+                </h2>
+              </div>
               <p className="text-sand-light text-lg mb-6">
-                After completing this registration form, please proceed to payment using the button below.
+                After completing the registration form, finalize your registration by paying through Zeffy.
               </p>
               <Button
                 asChild
@@ -56,8 +80,9 @@ const RegisterPage = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2"
                 >
+                  <CreditCard className="w-5 h-5" />
                   Proceed to Payment
-                  <ExternalLink className="w-5 h-5" />
+                  <ExternalLink className="w-4 h-4" />
                 </a>
               </Button>
             </div>

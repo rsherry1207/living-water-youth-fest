@@ -21,7 +21,7 @@ const navItems = [
     label: "About SRYFC",
     submenu: [
       { label: "About Conference", href: "/about/conference" },
-      { label: "About Churches", href: "/about/churches" },
+      { label: "Meet the Board", href: "/about/board" },
       { label: "About Merch", href: "/about/merch" },
     ],
   },
