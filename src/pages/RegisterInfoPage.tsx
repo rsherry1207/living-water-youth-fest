@@ -62,7 +62,6 @@ const RegisterInfoPage = () => {
             <h2 className="text-2xl md:text-3xl font-display font-bold text-sand-light text-center mb-8">
               Registration Periods
             </h2>
-            <p className="text-sand/60 text-center mb-6">(Costs TBA)</p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20 hover:bg-white/15 transition-all">
                 <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -110,7 +109,15 @@ const RegisterInfoPage = () => {
                     <span className="text-white font-bold text-sm">2</span>
                   </div>
                   <p className="font-display text-lg text-muted-foreground">
-                    After registering, complete the required Google Form to finalize your registration.
+                    Complete the required Google Form.
+                  </p>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-white font-bold text-sm">3</span>
+                  </div>
+                  <p className="font-display text-lg text-muted-foreground">
+                    Finalize registration by paying through Zeffy.
                   </p>
                 </div>
               </div>
@@ -139,14 +146,18 @@ const RegisterInfoPage = () => {
                 If you have any questions about registration, the conference, or need assistance, please don't hesitate to reach out to us.
               </p>
               
-              <div className="grid md:grid-cols-2 gap-6 pt-6">
+              <div className="flex flex-col items-center gap-4 pt-6">
                 <div className="flex items-center justify-center gap-3 text-sand-light">
                   <Mail className="w-5 h-5 text-secondary" />
                   <span className="font-display">sryfc@marthomachurch.org</span>
                 </div>
                 <div className="flex items-center justify-center gap-3 text-sand-light">
                   <Phone className="w-5 h-5 text-secondary" />
-                  <span className="font-display">(555) 123-4567</span>
+                  <span className="font-display">(813) 992-7874</span>
+                </div>
+                <div className="flex items-center justify-center gap-3 text-sand-light">
+                  <Phone className="w-5 h-5 text-secondary" />
+                  <span className="font-display">(954) 909-3700</span>
                 </div>
               </div>
             </div>
@@ -165,10 +176,6 @@ const RegisterInfoPage = () => {
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
                 <h3 className="font-display font-bold text-sand-light mb-2">Do I need parental consent if I'm under 18?</h3>
                 <p className="text-sand/80">Yes, participants under 18 must provide parent/guardian contact information during registration.</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                <h3 className="font-display font-bold text-sand-light mb-2">Can I register multiple people at once?</h3>
-                <p className="text-sand/80">Each person must be registered individually with their own unique email address.</p>
               </div>
             </div>
           </div>
