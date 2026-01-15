@@ -11,7 +11,7 @@ import RegisterInfoPage from "./pages/RegisterInfoPage";
 import RegisterGooglePage from "./pages/RegisterGooglePage";
 import SpeakersPage from "./pages/SpeakersPage";
 import AboutConferencePage from "./pages/AboutConferencePage";
-import AboutChurchesPage from "./pages/AboutChurchesPage";
+import MeetTheBoardPage from "./pages/MeetTheBoardPage";
 import AboutMerchPage from "./pages/AboutMerchPage";
 
 const queryClient = new QueryClient();
@@ -30,7 +30,7 @@ const App = () => (
           <Route path="/register-google" element={<RegisterGooglePage />} />
           <Route path="/speakers" element={<SpeakersPage />} />
           <Route path="/about/conference" element={<AboutConferencePage />} />
-          <Route path="/about/churches" element={<AboutChurchesPage />} />
+          <Route path="/about/board" element={<MeetTheBoardPage />} />
           <Route path="/about/merch" element={<AboutMerchPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
