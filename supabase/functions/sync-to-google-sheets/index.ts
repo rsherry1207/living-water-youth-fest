@@ -1,23 +1,29 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { create, getNumericDate } from "https://deno.land/x/djwt@v2.8/mod.ts";
+import { create } from "https://deno.land/x/djwt@v2.8/mod.ts";
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
+
+const FUNCTION_SECRET = Deno.env.get("FUNCTION_SECRET");
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type",
+    "authorization, x-client-info, apikey, content-type, x-function-secret",
 };
 
-interface RegistrationData {
-  firstName: string;
-  lastName: string;
-  dateOfBirth: string;
-  phoneNumber: string;
-  email: string;
-  church: string;
-  parentName?: string;
-  parentPhone?: string;
-  parentEmail?: string;
-}
+// Input validation schema
+const registrationSchema = z.object({
+  firstName: z.string().min(1).max(50).trim(),
+  lastName: z.string().min(1).max(50).trim(),
+  dateOfBirth: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Invalid date format"),
+  phoneNumber: z.string().min(1).max(20).trim(),
+  email: z.string().email().max(255).trim(),
+  church: z.string().min(1).max(200).trim(),
+  parentName: z.string().max(100).optional(),
+  parentPhone: z.string().max(20).optional(),
+  parentEmail: z.string().email().max(255).optional().or(z.literal("")),
+});
+
+type RegistrationData = z.infer<typeof registrationSchema>;
 
 // Helper function to parse the service account key
 function parseServiceAccountKey() {
@@ -77,8 +83,7 @@ async function getAccessToken() {
   });
 
   if (!tokenResponse.ok) {
-    const errorText = await tokenResponse.text();
-    console.error("Token exchange error:", errorText);
+    console.error("Token exchange error: Failed to get access token");
     throw new Error(`Failed to get access token: ${tokenResponse.status}`);
   }
 
@@ -95,7 +100,7 @@ async function appendToSheet(data: RegistrationData) {
 
   const accessToken = await getAccessToken();
   
-  // Format the row data
+  // Format the row data - all values are already validated and trimmed
   const rowData = [
     new Date().toISOString(), // Timestamp
     data.firstName,
@@ -123,8 +128,7 @@ async function appendToSheet(data: RegistrationData) {
   });
 
   if (!response.ok) {
-    const errorText = await response.text();
-    console.error("Google Sheets API error:", errorText);
+    console.error("Google Sheets API error: Failed to append to sheet");
     throw new Error(`Failed to append to sheet: ${response.status}`);
   }
 
@@ -138,16 +142,38 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const registrationData: RegistrationData = await req.json();
+    // Verify function secret for authentication
+    const functionSecret = req.headers.get("x-function-secret");
+    if (!FUNCTION_SECRET || functionSecret !== FUNCTION_SECRET) {
+      console.error("Unauthorized: Invalid or missing function secret");
+      return new Response(
+        JSON.stringify({ error: "Unauthorized" }),
+        { status: 401, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    // Parse and validate input
+    const rawBody = await req.json();
+    const parseResult = registrationSchema.safeParse(rawBody);
+    
+    if (!parseResult.success) {
+      console.error("Validation error:", parseResult.error.errors);
+      return new Response(
+        JSON.stringify({ error: "Invalid input", details: parseResult.error.errors }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    const registrationData = parseResult.data;
     
     console.log("Syncing registration to Google Sheets:", registrationData.email);
 
     const result = await appendToSheet(registrationData);
     
-    console.log("Successfully synced to Google Sheets:", result);
+    console.log("Successfully synced to Google Sheets");
 
     return new Response(
-      JSON.stringify({ success: true, result }),
+      JSON.stringify({ success: true }),
       {
         status: 200,
         headers: {
@@ -157,9 +183,9 @@ const handler = async (req: Request): Promise<Response> => {
       }
     );
   } catch (error: any) {
-    console.error("Error syncing to Google Sheets:", error);
+    console.error("Error syncing to Google Sheets:", error.message);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: "Internal server error" }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
