@@ -22,7 +22,6 @@ const navItems = [
     submenu: [
       { label: "About Conference", href: "/about/conference" },
       { label: "Meet the Board", href: "/about/board" },
-      { label: "About Merch", href: "/about/merch" },
     ],
   },
   { label: "Speakers", href: "/speakers" },
