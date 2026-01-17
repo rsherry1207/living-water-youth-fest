@@ -1,30 +1,18 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import benAbrahamImg from "@/assets/ben-abraham.jpeg";
+import pearlAbrahamImg from "@/assets/pearl-abraham.jpeg";
 
 const speakers = [
   {
-    name: "Pastor John Smith",
-    role: "Senior Pastor, Grace Community Church",
-    bio: "Pastor John Smith has been serving in ministry for over 25 years. His passion for teaching God's Word and discipling the next generation has impacted thousands of lives across the country. He is known for his engaging speaking style and deep biblical insights that make Scripture come alive for listeners of all ages.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+    name: "Ben Abraham",
+    bio: "Ben Abraham lives in Dallas, TX with his family of four – Pearl Abraham, Judah (age 7) and David (age 4). Ben grew up in the Mar Thoma Church of Dallas, Carrollton and has been involved in mentoring youth for over 15 years. He has a particular passion for mentoring young men to be grounded in the Word and live out their faith. He works as a pediatrician for hospitalized children, and between 2015 and 2019 he lived in Miami, FL where he completed his residency training. During that time he worked closely with the St. Luke's Mar Thoma Church in Margate, FL and helped organize the 2018 Southern Regional Conference. Since that time he moved to St. Louis for fellowship and back to Dallas in 2021 where is currently plugged back into his home church, currently serving in the Young Families Fellowship.",
+    image: benAbrahamImg
   },
   {
-    name: "Sarah Johnson",
-    role: "Youth Ministry Director",
-    bio: "Sarah Johnson brings over 15 years of experience in youth ministry. Her dynamic approach to connecting with young people and her heart for worship has made her a sought-after speaker at conferences nationwide. She believes in empowering youth to discover their God-given purpose and live out their faith boldly.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face"
-  },
-  {
-    name: "Dr. Michael Chen",
-    role: "Theology Professor & Author",
-    bio: "Dr. Michael Chen is a respected theologian and author of several bestselling books on Christian living. His academic background combined with practical ministry experience gives him a unique perspective on applying biblical truths to everyday life. He has a gift for making complex theological concepts accessible and applicable.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
-  },
-  {
-    name: "Rebecca Martinez",
-    role: "Worship Leader & Recording Artist",
-    bio: "Rebecca Martinez is an acclaimed worship leader and recording artist whose music has touched hearts around the world. With multiple albums and a passionate heart for leading others into God's presence, she brings a powerful combination of musical excellence and spiritual depth to every gathering she leads.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face"
+    name: "Pearl Abraham",
+    bio: "Pearl Abraham is Ben's wife and grew up in Dubai until age 16 when she moved to Dallas. After finishing pharmacy school, Pearl moved back home and began working when she met Ben. They got married in 2016 and moved to Florida where she began specializing in oncology pharmacy. She has also been heavily involved in the Mar Thoma Church with a passion for bridging generational gaps, mentoring youth and teaching young children. In her (little) spare time, she likes to read non-fiction, dance, and try new places to eat.",
+    image: pearlAbrahamImg
   }
 ];
 
@@ -54,7 +42,6 @@ const SpeakersPage = () => {
                   <h2 className="text-2xl md:text-3xl font-display font-bold text-sand-light">
                     {speaker.name}
                   </h2>
-                  <p className="text-water-light font-medium">{speaker.role}</p>
                   <p className="text-sand/80 leading-relaxed">{speaker.bio}</p>
                 </div>
 
