@@ -150,13 +150,13 @@ const AboutConferencePage = () => {
               </p>
               <div className="space-y-4 flex flex-col items-center">
                 <a 
-                  href="https://instagram.com/sryfconference" 
+                  href="https://instagram.com/sryfc2026" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-sand-light hover:text-secondary transition-colors"
                 >
                   <Instagram className="w-5 h-5" />
-                  <span>@sryfconference</span>
+                  <span>@sryfc2026</span>
                 </a>
                 <a 
                   href="mailto:sryfconference@gmail.com"
