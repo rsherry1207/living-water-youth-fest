@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, Users, Calendar, Mail, Instagram } from "lucide-react";
-import sryFcLogo from "@/assets/sryfc-logo.jpeg";
 
 const AboutConferencePage = () => {
   const parishes = [
@@ -31,15 +30,11 @@ const AboutConferencePage = () => {
       <Navbar />
       <main className="pt-16">
         <div className="container mx-auto px-4 py-20">
-          {/* Header with Logo */}
+          {/* Header */}
           <div className="text-center mb-16">
-            <div className="flex justify-center mb-6">
-              <img 
-                src={sryFcLogo} 
-                alt="SRYFC Living Water Logo" 
-                className="w-full max-w-lg md:max-w-xl lg:max-w-2xl h-auto"
-              />
-            </div>
+            <h1 className="text-4xl md:text-5xl font-display font-bold text-sand-light mb-4">
+              About SRYFC
+            </h1>
             <p className="text-sand/80 text-lg max-w-2xl mx-auto">
               Interested in connecting with other Mar Thoma youth in the Southern region but don't know where to start? Here's the answers you were looking for!
             </p>
