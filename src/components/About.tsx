@@ -55,10 +55,10 @@ const About = () => {
               The Living Water
             </p>
             <p className="font-serif text-xl md:text-2xl text-ocean-deep italic leading-relaxed">
-              "Whoever drinks the water I give them will never thirst. Indeed, the water I give them will become in them a spring of water welling up to eternal life."
+              "Jesus answered, 'Everyone who drinks this water will be thirsty again, but whoever drinks the water I give them will never thirst. Indeed, the water I give them will become in them a spring of water welling up to eternal life.'"
             </p>
             <p className="font-display font-semibold text-lg text-ocean-dark">
-              — John 4:14
+              — John 4:13-14
             </p>
             <div className="pt-4">
               <p className="font-display text-lg text-foreground leading-relaxed">
