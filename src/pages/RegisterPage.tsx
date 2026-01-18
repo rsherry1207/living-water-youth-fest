@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, FileText, CreditCard } from "lucide-react";
 
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSe3HN5E24ez55v23IbtrOB-qmmCipeJ6DcjRterDbYBO8V-kw/viewform";
-const ZEFFY_PAYMENT_URL = "https://www.zeffy.com/en-US/ticketing/southern-regional-youth-fellowship-conference--2026";
+const ZEFFY_PAYMENT_URL = "https://www.zeffy.com/en-US/ticketing/southern-regional-youth-conference--2026";
 
 const RegisterPage = () => {
   return (

@@ -123,7 +123,7 @@ const RegisterInfoPage = () => {
               </div>
 
               <div className="pt-8">
-                <Link to="/register-google">
+                <Link to="/register">
                   <Button 
                     size="lg"
                     className="bg-gradient-to-r from-secondary to-coral hover:from-coral hover:to-secondary text-white font-display font-bold text-lg px-10 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all hover:scale-105"

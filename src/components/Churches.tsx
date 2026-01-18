@@ -36,13 +36,13 @@ const Churches = () => {
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">
-                  Contact: Coming soon
+                  (813) 992-7874 (Sushmita Saji)
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">
-                  Email: Coming soon
+                  sryfconference@gmail.com
                 </p>
               </div>
             </div>
@@ -50,8 +50,11 @@ const Churches = () => {
             <Button 
               variant="outline" 
               className="w-full border-2 border-ocean-medium hover:bg-ocean-medium hover:text-white font-display font-semibold transition-all"
+              asChild
             >
-              Learn more
+              <a href="https://stmarksmtctampa.org/site2/" target="_blank" rel="noopener noreferrer">
+                Learn more
+              </a>
             </Button>
           </div>
 
@@ -71,19 +74,19 @@ const Churches = () => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-coral flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">
-                  Location information coming soon
+                  4740 SW 82nd Ave, Davie, FL 33328
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-coral flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">
-                  Contact: Coming soon
+                  (954) 909-3700 (Steven John)
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-coral flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">
-                  Email: Coming soon
+                  sryfconference@gmail.com
                 </p>
               </div>
             </div>
@@ -91,8 +94,11 @@ const Churches = () => {
             <Button 
               variant="outline" 
               className="w-full border-2 border-secondary hover:bg-secondary hover:text-ocean-deep font-display font-semibold transition-all"
+              asChild
             >
-              Learn more
+              <a href="https://www.marthomachurchofsouthflorida.org/" target="_blank" rel="noopener noreferrer">
+                Learn more
+              </a>
             </Button>
           </div>
         </div>
