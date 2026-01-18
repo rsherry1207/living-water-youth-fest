@@ -85,6 +85,14 @@ const RegisterPage = () => {
                   <ExternalLink className="w-4 h-4" />
                 </a>
               </Button>
+              <p className="mt-4 text-sm text-sand/70 leading-relaxed max-w-md mx-auto">
+                <span className="font-semibold text-sand-light">Note:</span> Once you reach the
+                order summary page, please confirm that your total amount is correct. Zeffy
+                includes an <span className="italic">optional contribution</span> to support
+                their platform — this contribution does <span className="underline">not</span>{" "}
+                go to the conference. Please ensure your order total reflects only your
+                conference registration fee.
+              </p>
             </div>
           </div>
         </div>
