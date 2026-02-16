@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Gift } from "lucide-react";
 
-const RAFFLE_PAYMENT_URL = "#";
+const RAFFLE_PAYMENT_URL = "https://www.zeffy.com/en-US/ticketing/sryfc-raffle--2026";
 
 const prizes = [
   "$500 Southwest Airlines Gift Card",
