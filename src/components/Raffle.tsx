@@ -13,7 +13,7 @@ const Raffle = () => {
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto bg-primary/15 border border-primary/20 rounded-2xl p-8 md:p-12 text-center">
           {/* Title */}
           <h2 className="font-barlow font-bold text-4xl md:text-5xl text-secondary mb-6">
             Raffle
